@@ -14,6 +14,7 @@ public class WebRequestInterceptor implements WebFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange serverWebExchange, WebFilterChain webFilterChain) {
         logger.info(" Path="+ serverWebExchange.getRequest().getPath());
+        
         return webFilterChain.filter(serverWebExchange);
     }
 }
